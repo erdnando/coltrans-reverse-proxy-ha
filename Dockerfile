@@ -16,9 +16,9 @@ USER root
 RUN mkdir -p /run/haproxy/
 #docker rmi image erdnando/coltrans-reverse-proxy-ha
 #build
-#docker build -t erdnando/coltrans-reverse-proxy-ha .
+#docker build -t erdnando/coltrans-reverse-proxy-ha:1.0 .
 #local test
-#docker run -it -p 8080:80 --name coltrans-reverse-proxy-ha erdnando/coltrans-reverse-proxy-ha:1.0
+#docker run -itd -p 80:80 --name coltrans-reverse-proxy-ha erdnando/coltrans-reverse-proxy-ha:1.0
 #push
 #docker push erdnando/coltrans-reverse-proxy-ha:1.0
 
