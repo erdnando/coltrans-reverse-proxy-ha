@@ -1,7 +1,7 @@
 FROM haproxy
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-RUN https://github.com/erdnando/coltrans-reverse-proxy-ha.git /usr/local/etc/haproxy
+RUN git clone https://github.com/erdnando/coltrans-reverse-proxy-ha.git /usr/local/etc/haproxy
 
 WORKDIR /usr/local/etc/haproxy
 
