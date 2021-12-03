@@ -1,14 +1,14 @@
 FROM node:14 as builder
 
 ADD "https://www.random.org/cgi-bin/randbyte?nbytes=10&format=h" skipcache
-RUN git clone https://github.com/erdnando/coltrans-reverse-proxy-ha.git /opt/ha_config
+RUN git clone https://github.com/erdnando/coltrans-reverse-proxy-ha.git /opt/ha_ws_config
 
-WORKDIR /opt/ha_config
+WORKDIR /opt/ha_ws_config
 
 
 FROM haproxy
 
-COPY --from=builder /opt/ha_config/ /usr/local/etc/haproxy
+COPY --from=builder /opt/ha_ws_config/ /usr/local/etc/haproxy
 
 #COPY haproxy.cfg /usr/local/etc/haproxy
 
